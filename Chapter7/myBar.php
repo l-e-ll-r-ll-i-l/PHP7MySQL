@@ -14,19 +14,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>クラスを読み込んで利用する</title>
+    <title>クラスメンバーを使う</title>
 </head>
 <body>
 <pre>
     <?php
+        // クラスメソッドを実行する
+        Staff::deposit(100);
+        Staff::deposit(150);
+
+        // クラスプロパティを確認する
+        echo Staff::$piggyBank,"円になりました。\n";
+
         // staffクラスのインスタンスを作る
         $kkoma = new Staff("Kこまー",13);
-        $kjiro = new Staff("Kじーろ",15);
+        // インスタンスメソッドを実行する
+        $kkoma->latePenalty();
+
+        // クラスプロパティを確認する
+
+        //$kjiro = new Staff("Kじーろ",15);
+        echo Staff::$piggyBank,"円になりました。\n";
+
 
         // メソッドを実行する
-        $kkoma ->hello();
-        $kjiro ->hello();
-
+        /*
+            $kkoma ->hello();
+            $kjiro ->hello();
+         */
     ?>
 </pre>
 </body>

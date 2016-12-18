@@ -12,13 +12,12 @@
         public $name;
         public $age;
 
-        // インスタンスメソッド
-        public function hello(){
-            if (is_null($this->name)){
-                echo "こーんにーちはー","\n";
-            }else {
-                echo "こんにちはずら！{$this ->name}ずらよ！","\n";
-            }
+        // クラスプロパティ
+        public Static $piggyBank = 0;
+
+        // クラスメソッド
+        public static function deposit(int $yen){
+            self::$piggyBank += $yen;
         }
 
         // コンストラクタ
@@ -28,5 +27,21 @@
             $this->name = $name;
             $this->age = $age;
         }
+
+        // インスタンスメソッド
+        public function hello(){
+            if (is_null($this->name)){
+                echo "こーんにーちはー","\n";
+            }else {
+                echo "こんにちはずら！{$this ->name}ずらよ！","\n";
+            }
+        }
+
+        // 遅刻して罰金
+        public function latePenalty(){
+            // スタティックメソッドを実行
+            self::deposit(1000);
+        }
+
     }
 // ?>
