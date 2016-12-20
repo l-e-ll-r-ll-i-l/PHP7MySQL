@@ -7,7 +7,7 @@
      */
 
     // Staffクラスファイルを読み込む
-    require_once ("Staff.php");
+    require_once("Staff.php");
 ?>
 
 <!DOCTYPE html>
